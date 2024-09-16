@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'widgets/crossword_generator_app.dart'; // Add this import
+
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ProviderScope(
+  runApp(
+    ProviderScope(
       child: MaterialApp(
         title: 'Crossword Builder',
         debugShowCheckedModeBanner: false,
@@ -19,15 +14,8 @@ class MyApp extends StatelessWidget {
           colorSchemeSeed: Colors.blueGrey,
           brightness: Brightness.light,
         ),
-        home: const Scaffold(
-          body: Center(
-            child: Text(
-              'Hello, World!',
-              style: TextStyle(fontSize: 24),
-            ),
-          ),
-        ),
+        home: const CrosswordGeneratorApp(), // Remove what was here and replace
       ),
-    );
-  }
+    ),
+  );
 }
